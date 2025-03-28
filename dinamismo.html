@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Dinamismo</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <div class="row bg-dark">
+                <div class="col-md-8 col-md-8 mx-auto">
+                    <h1 class="text-center mt-5 text-white">Esta es una Página para 4G</h1>
+                </div>
+            </div>
+        </header>
+        <nav class="navbar bg-secondary-subtle">
+            <div>
+                <a class="navbar-brand" href="#">Dinamismo</a>
+            
+                <a class="navbar-brand" href="script.html">Script</a>
+            
+                <a class="navbar-brand" href="index.html">Registro</a>
+            
+                <a class="navbar-brand" href="Listado.html">Listas</a>
+            </div>
+
+            <div>
+                <button id="cambiar_menu" class="btn btn-secondary w-10 text-center mb-4" onclick="click">Cambiar Ménu</button>
+            </div>
+        </nav>
+
+        <script>
+            const encabezado = document.querySelector('h1');
+            console.log(encabezado);
+            encabezado.innerText ='Alumnos del grupo 4';
+
+            // Modificar menú
+            const menu1 = document.querySelectorAll('nav div a');
+            console.log( menu1[0].textContent);
+            menu1[0].innerText = 'Link 1';
+            console.log( menu1[1].textContent);
+            menu1[1].innerText = 'Link 2';
+            console.log( menu1[2].textContent);
+            menu1[2].innerText = 'Link 3';
+            console.log( menu1[3].textContent);
+            menu1[3].innerText = 'Link 4';
+
+            let nombres = [
+                {nombre:'Astrid', edad:'20'},
+                {nombre:'Heather', edad:'22'},
+                {nombre:'Alyssane', edad:'25'},
+                {nombre:'Dagur', edad:'25'},
+                {nombre:'Helaena', edad:'20'},
+                {nombre:'Lucerys', edad:'22'},
+                {nombre:'Visenya', edad:'22'},
+                {nombre:'Heather', edad:'22'},
+                {nombre:'Dominic', edad:'22'},
+                {nombre:'Derek', edad:'22'},
+                {nombre:'Aidan', edad:'22'}
+            ];
+
+            const menuLinks = document.querySelectorAll('#menu a');
+
+        let menuAdmin = [
+            { titulo: "Ver" },
+            { titulo: "Borrar" },
+            { titulo: "Imprimir" },
+            { titulo: "Salir" }
+        ];
+
+        // Evento para cambiar el menú al hacer clic en el botón
+        document.getElementById('cambiar_menu').addEventListener('click', function(event) {
+            event.preventDefault();
+            menuAdmin.forEach((menu, i) => {
+                const links = document.querySelectorAll('nav div a');
+                links[i].textContent = menu.titulo;
+            });
+        });
+        </script>
+    </body>
+</html>
